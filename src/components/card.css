@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-transform: capitalize;
+    
     transition: all 0.2s linear;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -16,6 +16,7 @@ h1{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    text-transform: capitalize;
 }
 
 .card{

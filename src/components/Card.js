@@ -1,74 +1,62 @@
-import React from 'react'
+import React, { Component } from "react";
 
-import firebase from './Firebase';
-import { Link } from "react-router-dom";
+import db from './Firebase';
+
+
+// import { Link } from "react-router-dom";
 import './card.css'
-const card = () => {
+export default class Card extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { profilecard: [] }
+    }
+    componentDidMount() {
+        db.ref("profilecard").on("value", snapshot => {
+            let profilecard = [];
+            snapshot.forEach(snap => {
+                profilecard.push(snap.val());
+            });
+            this.setState({ profilecard: profilecard });
+        })
+    }
+    render() {
+        return (
+            <div>
+                <div className="container">
+                    {this.state.profilecard.map(data => {
+                        return (
+                            <div className="card">
+                                <div className="bg-image">
+                                    <img src="../assets/bg-image.jpg" alt="bla" />
+                                </div>
+                                <div className="pic">
+                                    <img src="../assets/pic.png" alt="" />
+                                </div>
+                                <div className="info">
+                                    <h3>{data.name}</h3>
+                                    <span><i className="fa fa-code">Web Designer</i></span>
+                                    <p>{data.skill}</p>
+                                    <div className="icons">
+                                        <a rel="noreferrer"  href={data.github} target="_blank"  className="fab fa-github">.</a>
+                                        <a rel="noreferrer"  href={data.twitter} target="_blank"  className="fab fa-twitter">.</a>
+                                        <a rel="noreferrer"  href={data.insta} target="_blank"  className="fab fa-instagram">.</a>
+                                        <a rel="noreferrer"  href={data.email} target="_blank"  className="fab fa-envelope">.</a>
+                                        
+                                            {/* <Link to="" className="fab fa-github" target="_blank"></Link>
+                                            <Link to="" className="fab fa-twitter" target="_blank"></Link>
+                                            <Link to={data.insta} className="fab fa-instagram" target="_blank"></Link>
+                                            <Link to=`${data.email}` className="fab fa-envelope" aria-hidden="true" target="_blank"></Link> */}
+                                    </div>
+                                </div>
+                            </div>
 
-    
-    return (
-        <div>
-            <div className="container">
-                <div className="card">
-                    <div className="bg-image">
-                        <img src="../assets/bg-image.jpg" alt="bla" />
-                    </div>
-                    <div className="pic">
-                        <img src="../assets/pic.png" alt="" />
-                    </div>
-                    <div className="info">
-                        <h3>Gaurav Gupta</h3>
-                        <span><i className="fa fa-code">Web Designer</i></span>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam quos unde tempora libero earum labore voluptates aliquid assumenda! Beatae, corporis!</p>
-                        <div className="icons">
-                            <Link to="#" className="fab fa-github"></Link>
-                            <Link to="#" className="fab fa-twitter"></Link>
-                            <Link to="#" className="fab fa-instagram"></Link>
-                            <Link to="#" className="fab fa-twitter"></Link>
-                        </div>
-                    </div>
-                </div>
-                <div className="card">
-                    <div className="bg-image">
-                        <img src="../assets/bg-image.jpg" alt="bla" />
-                    </div>
-                    <div className="pic">
-                        <img src="../assets/pic.png" alt="" />
-                    </div>
-                    <div className="info">
-                        <h3>Gaurav Gupta</h3>
-                        <span><i className="fa fa-code">Web Designer</i></span>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam quos unde tempora libero earum labore voluptates aliquid assumenda! Beatae, corporis!</p>
-                        <div className="icons">
-                            <Link to="#" className="fab fa-github"></Link>
-                            <Link to="#" className="fab fa-twitter"></Link>
-                            <Link to="#" className="fab fa-instagram"></Link>
-                            <Link to="#" className="fab fa-twitter"></Link>
-                        </div>
-                    </div>
-                </div>
-                <div className="card">
-                    <div className="bg-image">
-                        <img src="../assets/bg-image.jpg" alt="bla" />
-                    </div>
-                    <div className="pic">
-                        <img src="../assets/pic.png" alt="" />
-                    </div>
-                    <div className="info">
-                        <h3>Gaurav Gupta</h3>
-                        <span><i className="fa fa-code">Web Designer</i></span>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam quos unde tempora libero earum labore voluptates aliquid assumenda! Beatae, corporis!</p>
-                        <div className="icons">
-                            <Link to="#" className="fab fa-github"></Link>
-                            <Link to="#" className="fab fa-twitter"></Link>
-                            <Link to="#" className="fab fa-instagram"></Link>
-                            <Link to="#" className="fab fa-twitter"></Link>
-                        </div>
-                    </div>
+                        )
+                    })}
+
+
                 </div>
             </div>
-        </div>
-    )
+        );
+    }
 }
 
-export default card
