@@ -27,7 +27,7 @@ h1{
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
-    background-color: rgb(85, 85, 85);
+    background-color: rgba(255, 255, 255, 0.699);
 }
 .card .bg-image img{
     width: 100%;
@@ -40,12 +40,12 @@ h1{
     width: 120px;
     
     border-radius: 50%;
-    border: 10px solid #222;
+    border: 5px solid rgb(255, 255, 255);
     margin-top: -30%;
     position: relative;
 }
 .card .info h3{
-    color: #f0f0f0;
+    color: #000000;
     font-size: 20px;
     padding: 10px 0;
 }
@@ -55,14 +55,14 @@ h1{
 
 }
 .card .info p{
-    font-size: 13px;
+    font-size: 15px;
     padding: 10px 20px;
-    color: #999;
+    color: rgb(77, 77, 77);
 }
 .card .info .icons a{
     font-size: 20px;
     text-decoration: none;
-    color: #e74c3c;
+    color: #070707;
     margin-top: 10px;
     padding: 0 10px;
 }

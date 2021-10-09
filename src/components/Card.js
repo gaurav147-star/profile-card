@@ -37,10 +37,10 @@ export default class Card extends Component {
                                     <span><i className="fa fa-code">Web Designer</i></span>
                                     <p>{data.skill}</p>
                                     <div className="icons">
-                                        <a rel="noreferrer"  href={data.github} target="_blank"  className="fab fa-github">.</a>
-                                        <a rel="noreferrer"  href={data.twitter} target="_blank"  className="fab fa-twitter">.</a>
-                                        <a rel="noreferrer"  href={data.insta} target="_blank"  className="fab fa-instagram">.</a>
-                                        <a rel="noreferrer"  href={data.email} target="_blank"  className="fab fa-envelope">.</a>
+                                        <a rel="noreferrer"  href={data.github} target="_blank" ><i className="fab fa-github"></i></a>
+                                        <a rel="noreferrer"  href={data.twitter} target="_blank" ><i className="fab fa-twitter"></i></a>
+                                        <a rel="noreferrer"  href={data.insta} target="_blank" ><i className="fab fa-instagram"></i></a>
+                                        <a rel="noreferrer"  href={data.email} target="_blank" ><i className="fab fa-envelope-square"></i></a>
                                         
                                             {/* <Link to="" className="fab fa-github" target="_blank"></Link>
                                             <Link to="" className="fab fa-twitter" target="_blank"></Link>
