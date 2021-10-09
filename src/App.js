@@ -25,7 +25,7 @@ function App() {
         <Navbar />
         <Switch>
 
-          <Route exact path="/profile-card">
+          <Route exact path="/">
             <Profile url={url} />
           </Route>
 

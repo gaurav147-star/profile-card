@@ -81,7 +81,7 @@ const Profile = (props) => {
             <form className="f" method="POST">
                 <div className="form-row m-3">
                     <div className="col">
-                        <h1 className='text-center'>React Contact Form</h1>
+                        <h1 className='text-center'>React Profile Form</h1>
                     </div>
 
                 </div>
