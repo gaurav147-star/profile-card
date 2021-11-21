@@ -5,17 +5,18 @@ import firebase from 'firebase';
 
 // Your web app's Firebase configuration
 const config = {
-    apiKey: "AIzaSyBOj2ST5lYqRF7NTfQXmOHzU8ivkSA4IIg",
-    authDomain: "projectcard-ce6b9.firebaseapp.com",
-    projectId: "projectcard-ce6b9",
-    storageBucket: "projectcard-ce6b9.appspot.com",
-    messagingSenderId: "920299971817",
-    appId: "1:920299971817:web:89b54889f30db50f943c78"
+    apiKey: "AIzaSyDRRAAabvVXa4MOjdyHq_E5ATqH7P2KDjk",
+    authDomain: "profilecard-4ed40.firebaseapp.com",
+    projectId: "profilecard-4ed40",
+    storageBucket: "profilecard-4ed40.appspot.com",
+    messagingSenderId: "560267549953",
+    appId: "1:560267549953:web:f970ef1d499dc793f8cf00"
 };
 // Initialize Firebase
 firebase.initializeApp(config);
 
 var db=firebase.database();
+console.log(db)
 export default db;
 
 

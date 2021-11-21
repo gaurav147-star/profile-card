@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 
 import db from './Firebase';
-
+// import firebase from 'firebase/app';
 
 // import { Link } from "react-router-dom";
 import './card.css'
 export default class Card extends Component {
+    
     constructor(props) {
         super(props);
         this.state = { profilecard: [] }
@@ -15,6 +16,7 @@ export default class Card extends Component {
             let profilecard = [];
             snapshot.forEach(snap => {
                 profilecard.push(snap.val());
+                console.log(snap.val())
             });
             this.setState({ profilecard: profilecard });
         })

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Alert from './Alert';
 
 import '../components/profile.css';
-const Profile = (props) => {
+const Profile = () => {
 
 
     const [alert, setAlert] = useState(null);
@@ -45,7 +45,7 @@ const Profile = (props) => {
             insta,
         } = user;
         if (name && skill && email && github && twitter && insta) {
-            const res = await fetch("https://projectcard-ce6b9-default-rtdb.firebaseio.com//profilecard.json", {
+            const res = await fetch("https://profilecard-4ed40-default-rtdb.firebaseio.com//profilecard.json", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
